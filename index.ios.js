@@ -6,6 +6,8 @@
 import React from 'react';
 import {AppRegistry, StyleSheet, Text, View, Image} from 'react-native';
 
+var Button = require('react-native-button');
+
 // Main class
 var Sociables = React.createClass({
   render: function() {
@@ -22,7 +24,11 @@ var Sociables = React.createClass({
 
 // Card class - randomly generate and show a card
 var Card = React.createClass({
-  
+
+  handleButtonClick: function() {
+    this.forceUpdate();
+  },
+
   generateRandomCard: function() {
     randomCardIndex = Math.floor(Math.random() * 52); //generate random card number (0-51)
 
@@ -59,6 +65,12 @@ var Card = React.createClass({
     return (
       <View>
         <Image source={randomCard}/>
+        <Text></Text>
+        <Button
+          style={{borderWidth: 1, borderColor: 'blue'}}
+          onPress={() => this.handleButtonClick()}>
+          New card
+        </Button>
       </View>
     );
   }
