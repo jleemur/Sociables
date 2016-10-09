@@ -14,7 +14,7 @@ var Sociables = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Sociables
+
         </Text>
         <Card/>
       </View>
