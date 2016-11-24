@@ -2,6 +2,18 @@
 #
 .DS_Store
 
+# Ignore these things
+#
+.babelrc
+.buckconfig
+.flowconfig
+.gitignore.swp
+.watchmanconfig
+__tests__/
+android/
+index.android.js
+ios/
+
 # Xcode
 #
 build/
@@ -38,4 +50,4 @@ npm-debug.log
 buck-out/
 \.buckd/
 android/app/libs
-android/keystores/debug.keystore
+*.keystore
