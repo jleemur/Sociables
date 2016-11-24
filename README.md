@@ -2,8 +2,8 @@
 
 Get started:
 - git clone git@github.com:jleemur/Sociables.git
+- react-native init Sociables
 - cd Sociables
-- react-native init
 - git pull
 
 
