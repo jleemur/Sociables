@@ -3,6 +3,12 @@ import { Text, View, Image, TouchableHighlight } from 'react-native'
 
 var Button = require('react-native-button')
 var Card = React.createClass({
+  getInitialState() {
+    return {
+      cardsLeft: 52
+    }
+  },
+
   handleClick: function() {
     this.forceUpdate()
   },
@@ -44,7 +50,7 @@ var Card = React.createClass({
   },
 
   render: function() {
-    random = Math.floor(Math.random() * 52) //generate random number (0-51)
+    random = Math.floor(Math.random() * this.state.cardsLeft) //generate random number (0-51)
     card = this.getCard(random)
     text = this.getText(random)
     return (
