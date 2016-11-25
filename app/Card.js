@@ -1,7 +1,7 @@
-import React from 'react'
-import { Text, View, Image, TouchableHighlight } from 'react-native'
+import React from 'react';
+import { Text, View, Image, TouchableHighlight } from 'react-native';
+import Styles from './Styles'
 
-var Button = require('react-native-button')
 var Card = React.createClass({
   getInitialState() {
     return {
@@ -15,22 +15,22 @@ var Card = React.createClass({
 
   getCard: function(random) {
     //array of card images
-    randomCardImage = [require('../card_images/AC.png'), require('../card_images/2C.png'), require('../card_images/3C.png'), require('../card_images/4C.png'),
-                       require('../card_images/5C.png'), require('../card_images/6C.png'), require('../card_images/7C.png'), require('../card_images/8C.png'),
-                       require('../card_images/9C.png'), require('../card_images/TC.png'), require('../card_images/JC.png'), require('../card_images/QC.png'),
-                       require('../card_images/KC.png'),
-                       require('../card_images/AD.png'), require('../card_images/2D.png'), require('../card_images/3D.png'), require('../card_images/4D.png'),
-                       require('../card_images/5D.png'), require('../card_images/6D.png'), require('../card_images/7D.png'), require('../card_images/8D.png'),
-                       require('../card_images/9D.png'), require('../card_images/TD.png'), require('../card_images/JD.png'), require('../card_images/QD.png'),
-                       require('../card_images/KD.png'),
-                       require('../card_images/AH.png'), require('../card_images/2H.png'), require('../card_images/3H.png'), require('../card_images/4H.png'),
-                       require('../card_images/5H.png'), require('../card_images/6H.png'), require('../card_images/7H.png'), require('../card_images/8H.png'),
-                       require('../card_images/9H.png'), require('../card_images/TH.png'), require('../card_images/JH.png'), require('../card_images/QH.png'),
-                       require('../card_images/KH.png'),
-                       require('../card_images/AS.png'), require('../card_images/2S.png'), require('../card_images/3S.png'), require('../card_images/4S.png'),
-                       require('../card_images/5S.png'), require('../card_images/6S.png'), require('../card_images/7S.png'), require('../card_images/8S.png'),
-                       require('../card_images/9S.png'), require('../card_images/TS.png'), require('../card_images/JS.png'), require('../card_images/QS.png'),
-                       require('../card_images/KS.png')]
+    randomCardImage = [require('../images/AC.png'), require('../images/2C.png'), require('../images/3C.png'), require('../images/4C.png'),
+                       require('../images/5C.png'), require('../images/6C.png'), require('../images/7C.png'), require('../images/8C.png'),
+                       require('../images/9C.png'), require('../images/TC.png'), require('../images/JC.png'), require('../images/QC.png'),
+                       require('../images/KC.png'),
+                       require('../images/AD.png'), require('../images/2D.png'), require('../images/3D.png'), require('../images/4D.png'),
+                       require('../images/5D.png'), require('../images/6D.png'), require('../images/7D.png'), require('../images/8D.png'),
+                       require('../images/9D.png'), require('../images/TD.png'), require('../images/JD.png'), require('../images/QD.png'),
+                       require('../images/KD.png'),
+                       require('../images/AH.png'), require('../images/2H.png'), require('../images/3H.png'), require('../images/4H.png'),
+                       require('../images/5H.png'), require('../images/6H.png'), require('../images/7H.png'), require('../images/8H.png'),
+                       require('../images/9H.png'), require('../images/TH.png'), require('../images/JH.png'), require('../images/QH.png'),
+                       require('../images/KH.png'),
+                       require('../images/AS.png'), require('../images/2S.png'), require('../images/3S.png'), require('../images/4S.png'),
+                       require('../images/5S.png'), require('../images/6S.png'), require('../images/7S.png'), require('../images/8S.png'),
+                       require('../images/9S.png'), require('../images/TS.png'), require('../images/JS.png'), require('../images/QS.png'),
+                       require('../images/KS.png')]
 
     // incase I need to know the value (update both arrays simultaneously)
     randomCard = ['AC', '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', 'TC', 'JC', 'QC', 'KC',
@@ -58,7 +58,7 @@ var Card = React.createClass({
         <TouchableHighlight onPress = {()=>this.handleClick()} >
           <Image source={card}/>
         </TouchableHighlight>
-        <Text>{text}</Text>
+        <Text style={Styles.text}>{text}</Text>
       </View>
     )
   }
