@@ -6,16 +6,17 @@ const Styles = StyleSheet.create({
     flex: 1,
     width: undefined,
     height: undefined,
-    backgroundColor:'transparent',
+    backgroundColor:'skyblue',
+
+    //this is why the card/text move up and down sometimes
     justifyContent: 'center',
     alignItems: 'center',
   },
 
-  text: { 
+  text: {
     fontFamily: 'Damascus',
-    textAlign: 'center', 
     fontSize: 36,
-  }
+  },
 })
 
 module.exports = Styles

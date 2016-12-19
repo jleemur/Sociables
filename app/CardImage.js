@@ -1,18 +1,8 @@
 import React from 'react';
-import { Text, View, Image, TouchableHighlight } from 'react-native';
-import Styles from './Styles'
+import { Image } from 'react-native';
+//import Styles from './Styles'
 
-var Card = React.createClass({
-  getInitialState() {
-    return {
-      cardsLeft: 52
-    }
-  },
-
-  handleClick: function() {
-    this.forceUpdate()
-  },
-
+var CardImage = React.createClass({
   getCard: function(random) {
     //array of card images
     randomCardImage = [require('../images/AC.png'), require('../images/2C.png'), require('../images/3C.png'), require('../images/4C.png'),
@@ -42,26 +32,12 @@ var Card = React.createClass({
     return randomCardImage[random]
   },
 
-  getText: function(random) {
-    texts = ['Give 1', 'Give 2', 'Thumb Card', 'Rule Card', 'Never Have I Ever', 'Waterfall',
-              'Sevens', 'Question Master', 'Rhyme Time', 'Categories', 'Sociables', 'Ladies Drink', 'Men Drink']
-
-    return texts[random%13]
-  },
-
   render: function() {
-    random = Math.floor(Math.random() * this.state.cardsLeft) //generate random number (0-51)
-    card = this.getCard(random)
-    text = this.getText(random)
+    card = this.getCard(this.props.random)
     return (
-      <View>
-        <TouchableHighlight onPress = {()=>this.handleClick()} >
-          <Image source={card}/>
-        </TouchableHighlight>
-        <Text style={Styles.text}>{text}</Text>
-      </View>
+      <Image source={card}/>
     )
   }
 })
 
-module.exports = Card
+module.exports = CardImage
