@@ -4,9 +4,9 @@
  **/
 import React from 'react';
 import { View, TouchableHighlight } from 'react-native';
-import Styles from './app/Styles';
-import CardImage from './app/CardImage';
-import CardText from './app/CardText';
+import Styles from './Styles';
+import CardImage from './CardImage';
+import CardText from './CardText';
 
 var Sociables = React.createClass({
 
