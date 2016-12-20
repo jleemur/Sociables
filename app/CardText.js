@@ -31,7 +31,7 @@ var CardText = React.createClass({
     text = this.getCardText(this.props.random)
     return (
       <View>
-        <Text style={Styles.text}>{text}</Text>
+        <Text style={Styles.cardText}>{text}</Text>
       </View>
     )
   }
