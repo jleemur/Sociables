@@ -8,6 +8,9 @@ var Settings = React.createClass({
   render: function() {
     return (
       <View style={Styles.container}>
+        <TouchableHighlight onPress={this.props.closeModal}>
+          <Text style={Styles.backButton}><Emoji name="back"/></Text>
+        </TouchableHighlight>
         <Text>Hello World!</Text>
       </View>
     )

@@ -13,33 +13,35 @@ const Emoji = require('react-native-emoji').default
 var Sociables = React.createClass({
   getInitialState() {
     return {
-      modalVisible: false
+      modalVisible: false,
+      ruleVisible: true,
+      random: Math.floor(Math.random() * 52)
     };
   },
 
-  setModalVisible: function(visible) {
-    this.setState({modalVisible: visible});
+  getRandomNumber: function() {
+    this.setState({random: Math.floor(Math.random() * 52)})
   },
 
   render: function() {
-    settingsModal = ( <Modal visible={this.state.modalVisible}>
-                        <TouchableHighlight onPress={()=>this.setModalVisible(!this.state.modalVisible)}>
-                          <Text style={Styles.backButton}><Emoji name="back"/></Text>
-                        </TouchableHighlight>
-                        <Settings/>
-                      </Modal>
-                    )
-    //every render causes card to change...
-    random = Math.floor(Math.random() * 52)
+    settingsModal = (
+      <Modal visible={this.state.modalVisible}>
+        <Settings closeModal={()=>this.setState({modalVisible:false})}/>
+      </Modal>
+    )
+
+    //"rule" text below card
+    cardText = (this.state.ruleVisible) ? (<CardText random={this.state.random}/>)
+                                        : (<Text/>)
     return (
       <View style={Styles.container}>
         {settingsModal}
-        <TouchableHighlight onPress={()=>this.forceUpdate()}>
-          <View><CardImage random={random}/></View>
+        <TouchableHighlight onPress={()=>this.getRandomNumber()}>
+          <View><CardImage random={this.state.random}/></View>
         </TouchableHighlight>
-        <CardText random={random}/>
-        <TouchableHighlight onPress={()=>this.setModalVisible(!this.state.modalVisible)}>
-          <Text style={Styles.emoji}><Emoji name="gear"/></Text>
+        {cardText}
+        <TouchableHighlight onPress={()=>this.setState({modalVisible:true})}>
+          <Text style={Styles.settingsButton}><Emoji name="gear"/></Text>
         </TouchableHighlight>
       </View>
     );

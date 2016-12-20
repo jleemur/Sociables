@@ -7,8 +7,8 @@ const Styles = StyleSheet.create({
     backgroundColor:'skyblue',
 
     //this is why the card/text move up and down sometimes (not happening anymore)
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
 
   cardText: {
@@ -16,14 +16,14 @@ const Styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  emoji: {
+  settingsButton: {
     fontSize: 50,
     alignSelf: 'flex-start',
   },
 
   backButton: {
     fontSize: 50,
-    alignSelf:'flex-start'
+    alignSelf: 'flex-start',
   }
 })
 
